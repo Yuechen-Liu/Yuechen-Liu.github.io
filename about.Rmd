@@ -4,9 +4,8 @@ output:
   html_document:
       toc: true
       toc_float: true
-      theme: sandstone
+      theme: journal
 ---
-# My resume
 # Yuechen Liu
 518-960-7017 | yuechenl1998@gmail.com | 50 Haven Ave, #G87, 10032, New York City
 

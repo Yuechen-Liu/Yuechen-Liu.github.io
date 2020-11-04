@@ -4,14 +4,19 @@ output:
   html_document:
       toc: true
       toc_float: true
-      theme: sandstone
+      theme: journal
 ---
 # This is my first website
 Hello, this is Yuechen.
 
-# I like cats, but I don't have one. So...
-Here's a picture of my bear!
+# Click on the link below to see my resume!
+Or you can click on the 'about' on the right upper corner.
+[About me](about.html)
+
+# I like cats, but I don't have one. 
+So...here's a picture of my bear!
 ![](./Beary.jpeg)
+
 
 
 

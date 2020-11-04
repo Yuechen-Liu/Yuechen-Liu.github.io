@@ -8,7 +8,11 @@ navbar:
     - icon: fa-envelope fa-lg
       href: mailto:<yuechenl1998@gmail.com>
     - icon: fa-github fa-lg
-      href: http://github.com/<Yuechen-Liu>/
+      href: https://github.com/Yuechen-Liu
+    - icon: fab fa-linkedin
+      href: https://www.linkedin.com/in/yuechen-liu-037a231b9/
+    - icon: fab fa-instagram
+      href: https://www.instagram.com/katx_yc/
 output:
   html_document:
-    theme: sandstone
+    theme: journal
