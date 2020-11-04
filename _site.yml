@@ -13,6 +13,8 @@ navbar:
       href: https://www.linkedin.com/in/yuechen-liu-037a231b9/
     - icon: fab fa-instagram
       href: https://www.instagram.com/katx_yc/
+    - text: "Dashboard"
+      href: dashboard.html
 output:
   html_document:
     theme: journal
