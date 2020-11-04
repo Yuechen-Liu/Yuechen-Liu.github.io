@@ -16,7 +16,8 @@ Or you can click on the 'about' on the right upper corner.
 # I like cats, but I don't have one. 
 So...here's a picture of my bear!
 ![](./Beary.jpeg)
-
+# Me in animal crossing!
+![](./AC.jpeg)
 
 
 
