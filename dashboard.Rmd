@@ -1,0 +1,77 @@
+---
+title: "Plotly_problem 2"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(htmlwidgets)
+```
+
+
+```{r}
+data('rest_inspec') 
+res = 
+  rest_inspec%>% 
+  select(boro, critical_flag, cuisine_description, dba, score, violation_description, zipcode, grade) %>% 
+  janitor::clean_names() %>% 
+  filter(
+    boro == 'BRONX',
+    critical_flag == 'Critical',
+    grade ==c('A','B','C')
+  ) %>% 
+  drop_na(score, grade)
+
+
+```
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+res %>% 
+  mutate(text_label = str_c('Name: ', dba, '\nZip Code: ', zipcode))%>% 
+  plot_ly(x = ~cuisine_description, y = ~score, type = 'scatter', mode = 'markers', color = ~grade, alpha = .5,
+          text = ~text_label)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+res %>% 
+  mutate(cuisine_description = fct_reorder(cuisine_description, score)) %>% 
+  plot_ly(x = ~cuisine_description, y = ~score, type = 'box', color = ~grade, colors = 'viridis') %>% 
+  layout(
+    yaxis = list(range = c(0,100)
+  ))
+```
+
+### Chart C
+
+```{r}
+res %>%
+  count(cuisine_description) %>% 
+  mutate(cuisine_description = fct_reorder(cuisine_description, n)) %>% 
+  plot_ly(x = ~cuisine_description, y = ~n, type = 'bar', colors = 'viridis')
+  
+```
+
+
+
+
+
+
+
+
+
+
